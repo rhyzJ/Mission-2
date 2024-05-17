@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bad Batch</title>
+    <link rel="stylesheet" href="mission1.css"/>
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+    <!-- main heading/title -->
+    <header>
+            <img id="maintitle" src="https://www.dafont.com/forum/attach/orig/9/8/981900.jpg" alt="badbatchtitle"/>
+    </header>
+
+    <nav>
+        <!-- home page link nav button-->
+        <a class="navbtn" href="http://127.0.0.1:5500/Mission%201/mission1.html">Home Page</a>
+
+        <!-- wookiepedia link -->
+        <a class="navbtn" href="https://starwars.fandom.com/wiki/Main_Page"> Visit Wookiepedia</a>
+
+        <!-- disney plus link -->
+        <a class="navbtn" href="https://www.disneyplus.com/">Watch Now</a>
+    </nav>
+
+    <!-- main sections -->
+    <main>
+        <!-- left section of page-->
+        <section id="left">
+
+            <!-- link and subheading -->
+                <h1>
+                    <a href="https://starwars.fandom.com/wiki/Clone_Force_99#History" target="blank" class="subheading">Crew Members</a>
+                </h1>
+
+            <!-- Character profiles -->
+            <div id="characterContainer">
+
+                 <!-- omega character profile -->
+                <div class="character">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Omega" target="_blank"> 
+                        <img class= "profile" src="https://i.pinimg.com/564x/d2/70/f2/d270f2bbdd4d0c793bb5e9decc956d3d.jpg">
+                        </img>
+                        <p>Omega</p>
+                    </a>
+
+                </div>
+
+                <!-- hunter character profile -->
+                <div class="character" id="hunterProfile">
+
+                    <a class= "characterName" href="https://starwars.fandom.com/wiki/Hunter" target="_blank"> 
+                        <img class= "profile" src="https://i.pinimg.com/564x/34/d6/ca/34d6ca83b4137d07a0449c6ae032a2ea.jpg">
+                        </img>
+                        <p>Hunter</p>
+                    </a>
+
+                </div>
+
+                <!-- tech character profile -->
+                <div class="character" id="techProfile">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Tech" target="_blank"> 
+                        <img class= "profile" src="https://i.pinimg.com/564x/e5/c5/a1/e5c5a1ec0bf49bbdc328b29620a1e59a.jpg">
+                        </img>
+                        <p>Tech</p>
+                    </a>
+
+                </div>
+                
+                <!-- echo character profile -->
+                <div class="character" id="techProfile">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Echo" target="_blank"> 
+                        <img class= "profile" src="https://i.pinimg.com/564x/a1/ed/ad/a1edadbb01dc2d93786f1fef33f0d1a2.jpg">
+                        </img>
+                        <p>Echo</p>
+                    </a>
+
+                </div>
+
+                <!-- wrecker character profile -->
+                <div class="character" id="wreckerProfile">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Wrecker" target="_blank"> 
+                        <!-- 'target' atribute allows you to decide where the link is targeted to, in this case "_blank" tells the link to open in a new tab -->
+                        <img class= "profile" src="https://i.pinimg.com/564x/e9/ff/25/e9ff25dcab2e05472411560d9576e71b.jpg"></img>
+                        <p>Wrecker</p>
+                    </a>
+
+                </div>
+
+                <!-- crosshair character profile -->
+                <div class="character" id="crosshairProfile">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Crosshair" target="_blank"> 
+                        <!-- 'target' atribute allows you to decide where the link is targeted to, in this case "_blank" tells the link to open in a new tab -->
+                        <img class= "profile" src="https://i.pinimg.com/736x/73/12/8f/73128fbe069ce5b837a09e3720978a76.jpg">
+                        </img>
+                        <p>Crosshair</p>
+                    </a>
+                   
+                </div>
+
+                <!-- gonky character profile -->
+                <div class="character" id="gonkyProfile">
+
+                    <a class="characterName" href="https://starwars.fandom.com/wiki/Gonky_(Clone_Force_99)" target="_blank"> 
+                        <img class= "profile" src="https://i.pinimg.com/236x/80/82/73/808273508483dc28f9cceddb689adb58.jpg">
+                        </img>
+                        <p>Gonky</p>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Ship subheading-->
+            <h1 class="subheading" id="marauderHeading">The Marauder</h1>
+
+            <!-- container for ship elements & animation -->
+            <div id="shipContainer">
+
+                <!-- image of the ship -->
+                <div id="marauderImg">
+                    <img src="./Images/marauder.png" alt="the marauder">
+                </div>
+
+                <!-- about the ship paragraph -->
+                <p id="aboutship">The Marauder is the personal star ship of the Bad Batch crew (aka Clone Force 99). The ship is  unique compared to other Grand Army of the Republic starships, so it was used for the Bad Batch's covert and undercover missions throughout the Clone Wars.<br/><br/><br/><br/>
+                
+                
+            <!--span class to isolate the quote for independant italic styling-->
+                <span class="italic">"The Marauder is our home"</span> <br/> 
+                - Omega <br/><br/>
+                
+            </div>
+
+            <!-- laser animation image -->
+            <div id="movingSquare">
+                <img id="laserImg" src="https://p.productioncrate.com/stock-hd/effects/footagecrate-looping-blaster-bolt-basic-prev-full.png" alt="laser"/>
+            </div>
+
+        </section>
+
+
+        <!-- right section of page-->
+        <section id="right">
+            
+            <!-- get in touch (form) -->
+            <div id="formContainer">
+                <h1 id="getInTouch">Got a Job?</h1><br/><br/>
+
+                <form action="mailto:johnsrhya@gmail.com" method="post">
+
+                    <!-- name field -->
+                    <label>Name: </label><input class="formInput" type="text" name="name" required placeholder=" Darth Sidious"/></br></br>
+
+                    <!-- email field -->
+                    <label>Email: </label><input class="formInput" type="email" name="email" required placeholder=" JediHater66@gmail.com"/></br></br><br/>
+
+                    <!--radio buttons for mission nature choice-->
+                    <label id="radiobuttons">Nature of Mission:</label><br/><br/>
+
+                    <!--radio button 1-->
+                        <label>
+                            <input type="radio" id="support" name="subject" value="support"/>
+                            Search and Recovery
+                        </label><br/>
+
+                    <!--radio buttons 2-->
+                        <label>
+                            <input type="radio" id="support" name="subject" value="support"/>
+                            Rescue
+                        </label><br/>
+
+                    <!--radio button 3-->
+                    <label>
+                        <input type="radio" id="support" name="subject" value="support"/>
+                        Target Retrieval
+                    </label><br/>
+
+                    <!--radio button 4-->    
+                    <label>
+                        <input type="radio" id="support" name="subject" value="support"/>
+                        Confidential
+                    </label><br/><br/>
+
+                    <!--radio button 5-->
+                        <label>Other details:</label><br/>
+                        <textarea placeholder="type here..."></textarea><br/>
+                        <input type="submit" value="Submit"/>
+
+                </form>
+            </div>
+
+            <!-- quiz header -->
+            <h2 class="smallerHeading">Take a Quiz</h2>
+            
+            <div id="quizContainer">
+
+                <!-- quiz 1 - which character are you -->
+                <div class="quiz">
+                    
+                    <a href="https://www.starwars.com/news/quiz-which-member-of-the-bad-batch-are-you" target="_blank"> 
+                        <img class= "quizImage" src="https://cdn.mos.cms.futurecdn.net/wCrr2UrkBesv53suXXJtXL-1200-80.jpg"></img>
+                    </a>
+                    <p class="quizInfo">Which Member of the Crew Are You Most Like? </p>
+                </div>
+
+                <!-- quiz 2 - which animal for you -->
+                <div class="quiz">
+                    
+                    <a href="https://www.starwars.com/news/quiz-star-wars-creature-perfect-pet" target="_blank"> 
+                        <img class= "quizImage" src="https://lumiere-a.akamaihd.net/v1/images/quiz-star-wars-creature-perfect-pet_article-feature_2b980215.jpeg?region=0,0,1600,900&width=960"/>
+                        
+                    </a>
+                    <p class="quizInfo">Which Star Wars Creature Would Make Your Perfect Pet? </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<!-- footer section -->
+    <footer>
+        <button id="dontClick" type="button" onclick="alert('I like your style kid')">Dont You Dare Click Me</button>
+    </footer>
+
+</body>
+
+</html>
