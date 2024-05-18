@@ -65,6 +65,7 @@ nav {
     font-weight: bold;
     font-size: 25px;
     width: 33.3%;
+    
 }
 
 /* hover styling of nav bar */
@@ -117,7 +118,7 @@ nav {
     justify-content: center;
     height: 200px;
     width: 200px;
-    margin: 40px;
+    margin: 60px;
 }
 
 /* styling of the character profiles,   */
