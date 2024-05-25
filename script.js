@@ -1,14 +1,5 @@
 console.log("Connected ⭐"); // check connection
 
-// // profile images (declaring)
-
-// const imgOmega = document.getElementById("omegaImg"); // omega profile pic
-// const imgHunter = document.getElementById("hunterImg"); // hunter profile pic
-// const imgTech = document.getElementById("techImg"); // tech profile pic
-// const imgEcho = document.getElementById("echoImg"); // echo profile pic
-// const imgWrecker = document.getElementById("wreckerImg"); // wrecker profile pic
-// const imgCrosshair = document.getElementById("crosshairImg"); // crosshair profile pic
-
 // reusable function to change image width and height, used to be increase and decrease size
 function changeImageSize(e, width, height) {
   e.target.style.width = width;
@@ -75,7 +66,9 @@ const profiles = [
   },
 ];
 
-// using map method to add event listeners
+///////////////////////////////////////////////////////////////
+// using map method to add event listeners for hover effect //
+///////////////////////////////////////////////////////////////
 
 profiles.map(function (profile) {
   const imgEl = document.getElementById(profile.id);
@@ -92,3 +85,36 @@ profiles.map(function (profile) {
     changeImgSrc(imgEl, newSrc);
   });
 });
+
+///////
+
+const quiz1El = document.getElementById("quiz1");
+const quiz2El = document.getElementById("quiz2");
+const quizImg1 = document.getElementById("quizImage1");
+const quizImg2 = document.getElementById("quizImage2");
+
+const quiz1Og = "Which Member of the Crew Are You Most Like";
+const quiz2Og = "Which Star Wars Creature Would Make Your Perfect Pet?";
+
+function changeQuizEl(el) {
+  el.addEventListener("mouseover", function () {
+    el.textContent = "<-  Click to try the quiz!";
+    el.style.color = "red";
+    el.style.backgroundColor = "black";
+  });
+}
+
+quiz1El.addEventListener("mouseleave", function () {
+  quiz1El.textContent = quiz1Og;
+  quiz1El.style.color = "black";
+  quiz1El.style.backgroundColor = "rgb(141, 2, 2)";
+});
+
+quiz2El.addEventListener("mouseleave", function () {
+  quiz2El.textContent = quiz2Og;
+  quiz2El.style.color = "black";
+  quiz2El.style.backgroundColor = "rgb(141, 2, 2)";
+});
+
+changeQuizEl(quiz1El);
+changeQuizEl(quiz2El);
