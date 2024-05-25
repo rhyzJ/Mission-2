@@ -14,7 +14,7 @@ function changeImgSrc(imgOg, newSrc) {
 
 //array of objects to declare the profile images og src and new src
 //each obj contains: ID, mouseoverSrc, OgSrc (original source)
-
+const omegaImg = document.getElementById("omegaImg");
 const profiles = [
   {
     // omega
@@ -87,34 +87,41 @@ profiles.map(function (profile) {
 });
 
 ///////
+// array of quiz IDs
 
-const quiz1El = document.getElementById("quiz1");
-const quiz2El = document.getElementById("quiz2");
+const quizEl1 = document.getElementById("quiz1");
+const quizEl2 = document.getElementById("quiz2");
+
 const quizImg1 = document.getElementById("quizImage1");
 const quizImg2 = document.getElementById("quizImage2");
 
-const quiz1Og = "Which Member of the Crew Are You Most Like";
-const quiz2Og = "Which Star Wars Creature Would Make Your Perfect Pet?";
+const quizOg1 = "Which Member of the Crew Are You Most Like";
+const quizOg2 = "Which Star Wars Creature Would Make Your Perfect Pet?";
 
-function changeQuizEl(el) {
+const quizzes = [
+  { quizNum: quizEl1, ogText: quizOg1 },
+  { quizNum: quizEl2, ogText: quizOg2 },
+];
+
+// Function to change the styling and text content of a quiz element
+function changeQuizEl(el, originalText) {
   el.addEventListener("mouseover", function () {
     el.textContent = "<-  Click to try the quiz!";
     el.style.color = "red";
     el.style.backgroundColor = "black";
   });
+
+  el.addEventListener("mouseleave", function () {
+    el.textContent = originalText;
+    el.style.color = "black";
+    el.style.backgroundColor = "rgb(141, 2, 2)";
+  });
 }
 
-quiz1El.addEventListener("mouseleave", function () {
-  quiz1El.textContent = quiz1Og;
-  quiz1El.style.color = "black";
-  quiz1El.style.backgroundColor = "rgb(141, 2, 2)";
-});
+// Loop through the array of quiz objects
+for (const quiz of quizzes) {
+  changeQuizEl(quiz.quizNum, quiz.ogText);
+}
 
-quiz2El.addEventListener("mouseleave", function () {
-  quiz2El.textContent = quiz2Og;
-  quiz2El.style.color = "black";
-  quiz2El.style.backgroundColor = "rgb(141, 2, 2)";
-});
-
-changeQuizEl(quiz1El);
-changeQuizEl(quiz2El);
+///////////////////////////////////////////////
+// 
