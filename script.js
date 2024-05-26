@@ -124,4 +124,23 @@ for (const quiz of quizzes) {
 }
 
 ///////////////////////////////////////////////
-// 
+///////////////TRIVIA BUTTONS/////////////////
+///////////////////////////////////////////////
+
+const correctButtons = document.getElementsByClassName("correctButton"); // returns an array of the correct buttons
+const incorrectButtons = document.getElementsByClassName("incorrectButton"); // returns an array of the incorrect buttons
+
+for (let i = 0; i < correctButtons.length; i++) {
+  correctButtons[i].addEventListener("click", function () {
+    correctButtons[i].style.backgroundColor = "green";
+    correctButtons[i].style.borderColor = "green";
+  });
+}
+
+for (let i = 0; i < incorrectButtons.length; i++) {
+  incorrectButtons[i].addEventListener("click", function () {
+    incorrectButtons[i].style.backgroundColor = "black";
+    incorrectButtons[i].style.borderColor = "black";
+    incorrectButtons[i].textContent = "❌";
+  });
+}
