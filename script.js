@@ -129,6 +129,7 @@ for (const quiz of quizzes) {
 
 const correctButtons = document.getElementsByClassName("correctButton"); // returns an array of the correct buttons
 const incorrectButtons = document.getElementsByClassName("incorrectButton"); // returns an array of the incorrect buttons
+const allButtons = document.getElementsByClassName("triviaButton")
 
 for (let i = 0; i < correctButtons.length; i++) {
   correctButtons[i].addEventListener("click", function () {
@@ -144,3 +145,6 @@ for (let i = 0; i < incorrectButtons.length; i++) {
     incorrectButtons[i].textContent = "❌";
   });
 }
+
+const resetButton = document.getElementById("resetButton")
+
