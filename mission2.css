@@ -129,8 +129,8 @@ nav {
   color: rgba(0, 0, 0, 0);
   text-align: center;
   text-decoration: none;
-  font-size: 40px;
-  background-color: blueviolet;
+  font-size: 37px;
+  /* background-color: blueviolet; */
 }
 
 .subtext {
@@ -180,7 +180,7 @@ nav {
 }
 
 /* styling for marauder information paragraph */
-#aboutship {
+#aboutShip {
   padding: 20px 50px;
   background-color: rgba(0, 0, 0, 0.726);
   color: rgb(255, 255, 255);
@@ -255,7 +255,7 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 70px 50px;
-  height: 1200px;
+  height: 1350px;
   width: 600px;
   color: rgb(211, 211, 211);
   background-color: rgb(0, 0, 0);
@@ -268,13 +268,12 @@ nav {
 
 /* title of the form styling */
 #triviaHeading {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   font-size: 65px;
   font-family: starJedi;
   color: rgb(143, 4, 4);
   font-style: italic;
+  /* background-color: blueviolet; */
 }
 
 .generalText {
@@ -307,14 +306,31 @@ nav {
   margin: 3px;
 }
 
+.answerCountText {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#resetText {
+  width: 100%;
+  align-items: flex-start;
+  font-size: 20px;
+  font-family: kamino;
+  color: rgb(150, 9, 9);
+  /* background-color: blue; */
+}
 #resetButton {
-  text-align: center;
-  width: 33.3333%;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
+  height: 25px;
+  width: 33.33%;
+  font-weight: bolder;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+  color: rgb(0, 0, 0);
+  border: 5px solid whitesmoke;
   border-radius: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
+  cursor: pointer;
+  margin: 3px;
 }
 
 /* container which contains the quiz elements, alignments and spacing */

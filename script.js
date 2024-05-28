@@ -1,5 +1,9 @@
 console.log("Connected ⭐"); // check connection
 
+//////////////////////////////////////////////////////////////////
+//                 profile change on hover                      //
+//////////////////////////////////////////////////////////////////
+
 // reusable function to change image width and height, used to be increase and decrease size
 function changeImageSize(e, width, height) {
   e.target.style.width = width;
@@ -8,8 +12,8 @@ function changeImageSize(e, width, height) {
 
 //reusable function to change image source (original pic to gif)
 
-function changeImgSrc(imgOg, newSrc) {
-  imgOg.src = newSrc;
+function changeImgSrc(profileImg, newSrc) {
+  profileImg.src = newSrc;
 }
 
 //array of objects to declare the profile images og src and new src
@@ -66,9 +70,7 @@ const profiles = [
   },
 ];
 
-///////////////////////////////////////////////////////////////
-// using map method to add event listeners for hover effect //
-///////////////////////////////////////////////////////////////
+//   using map method to add event listeners for hover effect
 
 profiles.map(function (profile) {
   const imgEl = document.getElementById(profile.id);
@@ -76,6 +78,7 @@ profiles.map(function (profile) {
   const ogSrc = profile.ogSrc;
 
   imgEl.addEventListener("mouseleave", function (e) {
+    console.log(e.target.id);
     changeImageSize(e, "200px", "200px");
     changeImgSrc(imgEl, ogSrc);
   });
@@ -86,8 +89,9 @@ profiles.map(function (profile) {
   });
 });
 
-///////
-// array of quiz IDs
+///////////////////////////////////////////
+///           QUIZ SECTION              ///
+///////////////////////////////////////////
 
 const quizEl1 = document.getElementById("quiz1");
 const quizEl2 = document.getElementById("quiz2");
@@ -106,7 +110,7 @@ const quizzes = [
 // Function to change the styling and text content of a quiz element
 function changeQuizEl(el, originalText) {
   el.addEventListener("mouseover", function () {
-    el.textContent = "<-  Click to try the quiz!";
+    el.textContent = "⬅️ Click to try the quiz!";
     el.style.color = "red";
     el.style.backgroundColor = "black";
   });
@@ -123,28 +127,77 @@ for (const quiz of quizzes) {
   changeQuizEl(quiz.quizNum, quiz.ogText);
 }
 
-///////////////////////////////////////////////
-///////////////TRIVIA BUTTONS/////////////////
-///////////////////////////////////////////////
+/////////////////////////////////////////////
+///           TRIVIA BUTTONS              ///
+/////////////////////////////////////////////
 
 const correctButtons = document.getElementsByClassName("correctButton"); // returns an array of the correct buttons
 const incorrectButtons = document.getElementsByClassName("incorrectButton"); // returns an array of the incorrect buttons
-const allButtons = document.getElementsByClassName("triviaButton")
+const allButtons = document.getElementsByClassName("triviaButton");
+const resetButton = document.getElementById("resetButton");
+const resetNumber = document.getElementById("resetNumber");
+// store original style of buttons
 
-for (let i = 0; i < correctButtons.length; i++) {
-  correctButtons[i].addEventListener("click", function () {
-    correctButtons[i].style.backgroundColor = "green";
-    correctButtons[i].style.borderColor = "green";
+const originalButtons = []; // empty array, after loop it will store the elements as objects with the original, text content.
+
+for (let i = 0; i < allButtons.length; i++) {
+  originalButtons.push({
+    // add onto end of array
+    element: allButtons[i],
+    originalText: allButtons[i].textContent,
   });
 }
 
+const correctAnswerNum = document.getElementById("correctAnswerNumber");
+let correctNum = 0;
+for (let i = 0; i < correctButtons.length; i++) {
+  //
+  correctButtons[i].addEventListener("click", function () {
+    correctButtons[i].style.backgroundColor = "green";
+    correctButtons[i].style.borderColor = "green";
+
+    if (correctButtons[i].style.backgroundColor === "green") {
+      correctNum++;
+      correctAnswerNum.textContent = correctNum;
+    }
+  });
+}
+
+// const correct1 = document.getElementById("button4");
+// if (correct1.style.backgroundColor === "green") {
+//   console.log("greenbutton");
+// }
+const incorrectAnswerNum = document.getElementById("incorrectAnswerNumber");
+let incorrectNum = 0;
 for (let i = 0; i < incorrectButtons.length; i++) {
   incorrectButtons[i].addEventListener("click", function () {
     incorrectButtons[i].style.backgroundColor = "black";
     incorrectButtons[i].style.borderColor = "black";
     incorrectButtons[i].textContent = "❌";
+
+    if (incorrectButtons[i].style.backgroundColor === "black") {
+      incorrectNum++;
+      incorrectAnswerNum.textContent = incorrectNum;
+    }
   });
 }
+let reset = 0;
+resetButton.addEventListener("click", function () {
+  // adding reset function to button
+  reset++;
+  resetNumber.textContent = reset;
+  correctNum = 0;
+  incorrectNum = 0;
 
-const resetButton = document.getElementById("resetButton")
-
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].style.backgroundColor = "rgb(141, 2, 2)";
+    allButtons[i].style.borderColor = "rgb(141, 2, 2)";
+  }
+  for (const buttonState of originalButtons) {
+    //itertes over originalButtons array and assigns values to original content
+    buttonState.element.textContent = buttonState.originalText;
+  }
+  //reset correct number&incorrect number counter
+  correctAnswerNum.textContent = correctNum;
+  incorrectAnswerNum.textContent = incorrectNum;
+});

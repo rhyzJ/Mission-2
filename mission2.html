@@ -159,7 +159,7 @@
           </div>
 
           <!-- about the ship paragraph -->
-          <p id="aboutship">
+          <p id="aboutShip">
             The Marauder is the personal star ship of the Bad Batch crew (aka
             Clone Force 99). The ship is unique compared to other Grand Army of
             the Republic starships, so it was used for the Bad Batch's covert
@@ -187,14 +187,24 @@
         <div id="formContainer">
           <h1 id="triviaHeading">Test Your Knowledge</h1>
           <br />
-          <form>
+          <div>
             <div class="triviaContainer" id="trivia1">
               <h3 class="generalText">Who is the oldest in the squad?</h3>
-              <button class="incorrectButton triviaButton" id="button1">Hunter</button>
-              <button class="incorrectButton triviaButton" id="button2">Echo</button>
-              <button class="incorrectButton triviaButton" id="button3">Tech</button>
-              <button class="correctButton triviaButton" id="button4">Omega</button>
-              <button class="incorrectButton triviaButton" id="button5">Crosshair</button>
+              <button class="incorrectButton triviaButton" id="button1">
+                Hunter
+              </button>
+              <button class="incorrectButton triviaButton" id="button2">
+                Echo
+              </button>
+              <button class="incorrectButton triviaButton" id="button3">
+                Tech
+              </button>
+              <button class="correctButton triviaButton" id="button4">
+                Omega
+              </button>
+              <button class="incorrectButton triviaButton" id="button5">
+                Crosshair
+              </button>
               <br /><br />
             </div>
 
@@ -203,11 +213,21 @@
                 Which famous Imperial is in charge of the Empire's operations on
                 Kamino?
               </h3>
-              <button class="incorrectButton triviaButton" id="button6">Rampart</button>
-              <button class="correctButton triviaButton" id="button7">Tarkin</button>
-              <button class="incorrectButton triviaButton" id="button8">Thrawn</button>
-              <button class="incorrectButton triviaButton" id="button9">Darth Vader</button>
-              <button class="incorrectButton triviaButton" id="button10">General Veers</button>
+              <button class="incorrectButton triviaButton" id="button6">
+                Rampart
+              </button>
+              <button class="correctButton triviaButton" id="button7">
+                Tarkin
+              </button>
+              <button class="incorrectButton triviaButton" id="button8">
+                Thrawn
+              </button>
+              <button class="incorrectButton triviaButton" id="button9">
+                Darth Vader
+              </button>
+              <button class="incorrectButton triviaButton" id="button10">
+                General Veers
+              </button>
               <br /><br />
             </div>
 
@@ -215,18 +235,39 @@
               <h3 class="generalText">
                 Which member specialises in demolitions?
               </h3>
-              <button class="incorrectButton triviaButton" id="button11">Hunter</button>
-              <button class="correctButton triviaButton" id="button12">Wrecker</button>
-              <button class="incorrectButton triviaButton" id="button13">Echo</button>
-              <button class="incorrectButton triviaButton" id="button14">Omega</button>
-              <button class="incorrectButton triviaButton" id="button15">Crosshair</button>
+              <button class="incorrectButton triviaButton" id="button11">
+                Hunter
+              </button>
+              <button class="correctButton triviaButton" id="button12">
+                Wrecker
+              </button>
+              <button class="incorrectButton triviaButton" id="button13">
+                Echo
+              </button>
+              <button class="incorrectButton triviaButton" id="button14">
+                Omega
+              </button>
+              <button class="incorrectButton triviaButton" id="button15">
+                Crosshair
+              </button>
               <br /><br />
 
-              <button id= "resetButton" class="triviaButton" type="button">Reset Quiz</button>
+              <button id="resetButton">Reset Quiz</button><br /><br />
+              <h4 class="answerCountText">
+                ✅ Correct Answers: <span id="correctAnswerNumber">0</span> / 3
+              </h4>
+              <br />
+              <h4 class="answerCountText">
+                ❌ Wrong Answers: <span id="incorrectAnswerNumber">0</span>
+              </h4>
+              <br /><br />
 
+              <p id="resetText">
+                Number of resets: <span id="resetNumber">0</span>
+              </p>
+              <br />
             </div>
-
-        </form>
+          </div>
         </div>
 
         <!-- quiz header -->
