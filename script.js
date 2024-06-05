@@ -1,12 +1,12 @@
-"use strict";
+"use strict"; // strict javascript
 
 console.log("Connected ⭐"); // check connection
 
 //////////////////////////////////////////////////////////////////
-//                 profile change on hover                      //
+//                     PROFILE HOVER                            //
 //////////////////////////////////////////////////////////////////
 
-// reusable function to change image width and height, used to be increase and decrease size
+// dynamic reusable function to change image width and height, used to be increase and decrease size of element
 function changeImageSize(e, width, height) {
   e.target.style.width = width;
   e.target.style.height = height;
@@ -19,7 +19,7 @@ function changeImgSrc(profileImg, newSrc) {
 }
 
 //array of objects to declare the profile images og src and new src
-//each obj contains: ID, mouseoverSrc, OgSrc (original source)
+//each obj contains: ID, newImg, OgSrc (original source)
 const omegaImg = document.getElementById("omegaImg");
 const profiles = [
   {
@@ -27,7 +27,7 @@ const profiles = [
     id: "omegaImg",
     ogSrc:
       "https://i.pinimg.com/564x/d2/70/f2/d270f2bbdd4d0c793bb5e9decc956d3d.jpg",
-    mouseoverSrc:
+    newImg:
       "https://64.media.tumblr.com/b7bba59fb52a612d51c93546d975368f/5225a9166bb5494e-07/s540x810/e20820b6abc16cb5ab4aaf45258f67a57b771fae.gif",
   },
   {
@@ -35,7 +35,7 @@ const profiles = [
     id: "hunterImg",
     ogSrc:
       "https://i.pinimg.com/564x/34/d6/ca/34d6ca83b4137d07a0449c6ae032a2ea.jpg",
-    mouseoverSrc:
+    newImg:
       "https://i.pinimg.com/originals/ea/57/fe/ea57fe92f603187f4a591ddc9d765ab6.gif",
   },
   {
@@ -43,7 +43,7 @@ const profiles = [
     id: "techImg",
     ogSrc:
       "https://i.pinimg.com/564x/e5/c5/a1/e5c5a1ec0bf49bbdc328b29620a1e59a.jpg",
-    mouseoverSrc:
+    newImg:
       "https://i.pinimg.com/originals/f1/f3/e7/f1f3e778efb4dedd6cba233dfef71cfc.gif",
   },
   {
@@ -51,7 +51,7 @@ const profiles = [
     id: "echoImg",
     ogSrc:
       "https://i.pinimg.com/564x/a1/ed/ad/a1edadbb01dc2d93786f1fef33f0d1a2.jpg",
-    mouseoverSrc:
+    newImg:
       "https://i.pinimg.com/originals/ed/db/ba/eddbba91e925ff50952cc0c9a81bf9bb.gif",
   },
   {
@@ -59,7 +59,7 @@ const profiles = [
     id: "wreckerImg",
     ogSrc:
       "https://i.pinimg.com/564x/e9/ff/25/e9ff25dcab2e05472411560d9576e71b.jpg",
-    mouseoverSrc:
+    newImg:
       "https://i.pinimg.com/originals/12/9b/35/129b353a720f2a370d0bd162ec1b3e54.gif",
   },
   {
@@ -67,7 +67,7 @@ const profiles = [
     id: "crosshairImg",
     ogSrc:
       "https://i.pinimg.com/736x/73/12/8f/73128fbe069ce5b837a09e3720978a76.jpg",
-    mouseoverSrc:
+    newImg:
       "https://i.pinimg.com/originals/ee/a2/1f/eea21ffa28a05dce488afc82178aeced.gif",
   },
 ];
@@ -76,7 +76,7 @@ const profiles = [
 
 profiles.map(function (profile) {
   const imgEl = document.getElementById(profile.id);
-  const newSrc = profile.mouseoverSrc;
+  const newSrc = profile.newImg;
   const ogSrc = profile.ogSrc;
 
   imgEl.addEventListener("mouseleave", function (e) {
@@ -150,6 +150,8 @@ for (let i = 0; i < allButtons.length; i++) {
   });
 }
 
+// CORRECT BUTTONS ///////////////////////////////////////////////////////////////////////////////////////////////////////
+//correct buttons, change colour and text content when clicked
 const correctAnswerNum = document.getElementById("correctAnswerNumber");
 let correctNum = 0;
 for (let i = 0; i < correctButtons.length; i++) {
@@ -158,6 +160,8 @@ for (let i = 0; i < correctButtons.length; i++) {
     correctButtons[i].style.backgroundColor = "green";
     correctButtons[i].style.borderColor = "green";
 
+    // if button is green increment by one and change text content
+    // CORRECT COUNTER
     if (correctButtons[i].style.backgroundColor === "green") {
       correctNum++;
       correctAnswerNum.textContent = correctNum;
@@ -165,41 +169,52 @@ for (let i = 0; i < correctButtons.length; i++) {
   });
 }
 
-// const correct1 = document.getElementById("button4");
-// if (correct1.style.backgroundColor === "green") {
-//   console.log("greenbutton");
-// }
+// INCORRECT BUTTONS ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//incorrect buttons, change colour and text content when clicked
 const incorrectAnswerNum = document.getElementById("incorrectAnswerNumber");
 let incorrectNum = 0;
+
+// for loop adding click event listener to incorrect buttons and sets txt content and colour styling to incorrect
 for (let i = 0; i < incorrectButtons.length; i++) {
   incorrectButtons[i].addEventListener("click", function () {
-    incorrectButtons[i].style.backgroundColor = "black";
-    incorrectButtons[i].style.borderColor = "black";
-    incorrectButtons[i].textContent = "❌";
+    incorrectButtons[i].style.backgroundColor = "black"; // change background to black
+    incorrectButtons[i].style.borderColor = "black"; // change background to black
+    incorrectButtons[i].textContent = "❌"; // change text content
 
+    // INCORRECT COUNTER //
+    // if button is black, increment by one and change text content to equal incremented number
     if (incorrectButtons[i].style.backgroundColor === "black") {
       incorrectNum++;
       incorrectAnswerNum.textContent = incorrectNum;
     }
   });
 }
+
+// RESET BUTTON //
 let reset = 0;
 resetButton.addEventListener("click", function () {
-  // adding reset function to button
-  reset++;
-  resetNumber.textContent = reset;
-  correctNum = 0;
+  // adding reset COUNTER
+  reset++; // increment by one
+  resetNumber.textContent = reset; // change text content to equal new value
+
+  // setting variables as zero
+  correctNum = 0; // change correct num
   incorrectNum = 0;
 
+  // for loop to change colour of buttons back to original colour
   for (let i = 0; i < allButtons.length; i++) {
     allButtons[i].style.backgroundColor = "rgb(141, 2, 2)";
     allButtons[i].style.borderColor = "rgb(141, 2, 2)";
   }
+
+  // for of loop to change text content back to original settings
   for (const buttonState of originalButtons) {
     //itertes over originalButtons array and assigns values to original content
     buttonState.element.textContent = buttonState.originalText;
   }
-  //reset correct number&incorrect number counter
+
+  //reset correct number & incorrect number counter to zero
   correctAnswerNum.textContent = correctNum;
   incorrectAnswerNum.textContent = incorrectNum;
 });
